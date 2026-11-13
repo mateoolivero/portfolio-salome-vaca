@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soy Salomé · Community Manager</title>
+<meta name="description" content="Salomé Vaca, community manager y creadora de contenido. Estrategia, contenido y comunidad para marcas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Quicksand:wght@400;500;600;700&family=Instrument+Sans:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* Colores del manual de marca */
+  :root{
+    --negro:#201E20;
+    --crema:#F4F1EC;
+    --lima:#D2D700;
+    --naranja:#EB5934;
+    --violeta:#5C59A3;
+    --linea:rgba(32,30,32,.14);
+    --suave:rgba(32,30,32,.62);
+    --f-titulo:'Anton', 'Arial Narrow', sans-serif;      /* titulares condensados, como la referencia */
+    --f-mano:'Caveat Brush', cursive;                     /* sustituto web de Curry Ramen / Howdy Frog */
+    --f-texto:'Quicksand', system-ui, sans-serif;         /* sustituto web de la tipografía del manual */
+    --ancho:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{background:var(--crema);color:var(--negro);font-family:var(--f-texto);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--ancho);margin:0 auto;padding:0 32px}
+  .titulo{font-family:var(--f-titulo);text-transform:uppercase;font-weight:400;line-height:.95;letter-spacing:.005em}
+  .mano{font-family:var(--f-mano);font-weight:400;text-transform:none;letter-spacing:0}
+
+  /* NAV */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .nav__logo img{height:46px;width:auto}
+  .nav__links{display:flex;gap:28px;font-weight:600;font-size:14px}
+  .nav__links a:hover{color:var(--naranja)}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:var(--negro);color:var(--crema);border-radius:999px;padding:10px 12px 10px 20px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;transition:transform .2s}
+  .pill:hover{transform:translateY(-2px)}
+  .pill__dot{width:28px;height:28px;border-radius:50%;background:var(--lima);color:var(--negro);display:grid;place-items:center;font-size:15px}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.05fr 1fr .45fr;gap:32px;align-items:end;padding:24px 0 56px}
+  .hero__hola{font-family:var(--f-mano);font-size:34px;color:var(--violeta);margin-bottom:6px}
+  .hero h1{font-size:clamp(56px,7.4vw,104px)}
+  .hero h1 .mano{display:block;color:var(--naranja);font-size:.62em;line-height:1.05;margin:.06em 0 .04em}
+  .hero__txt{max-width:400px;margin:22px 0 28px;font-size:17px;color:var(--suave)}
+  .hero__foto{position:relative;align-self:stretch;min-height:520px}
+  .arco{position:absolute;inset:0;border-radius:0 0 999px 999px;overflow:hidden;background:var(--lima)}
+  .arco img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+  .sello{position:absolute;width:138px;left:-50px;bottom:40px;background:var(--crema);border-radius:50%;padding:10px;animation:gira 22s linear infinite}
+  .sello img{width:100%}
+  .sello::after{content:"";position:absolute;inset:50%;width:16px;height:16px;margin:-8px;border-radius:50%;background:var(--naranja)}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  .stats{display:flex;flex-direction:column;gap:26px;text-align:right;padding-bottom:12px}
+  .stat b{display:block;font-family:var(--f-titulo);font-weight:400;font-size:40px;line-height:1}
+  .stat span{font-size:13px;color:var(--suave)}
+
+  /* SERVICIOS */
+  .servicios{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .serv{padding:26px 24px 28px;border-left:1px solid var(--linea)}
+  .serv:first-child{border-left:0;padding-left:0}
+  .serv i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-bottom:14px}
+  .serv h3{font-family:var(--f-titulo);font-weight:400;text-transform:uppercase;font-size:20px;letter-spacing:.02em;margin-bottom:6px}
+  .serv p{font-size:14px;color:var(--suave)}
+
+  /* MARQUESINA */
+  .cinta{background:var(--negro);color:var(--crema);overflow:hidden;white-space:nowrap;padding:16px 0;margin:88px 0 0;transform:rotate(-1.5deg) scale(1.03)}
+  .cinta__in{display:inline-flex;gap:36px;animation:corre 28s linear infinite;font-family:var(--f-titulo);font-size:30px;text-transform:uppercase}
+  .cinta__in span:nth-child(4n+2){font-family:var(--f-mano);text-transform:none;color:var(--lima);font-size:34px}
+  .cinta__in em{font-style:normal;color:var(--naranja)}
+  @keyframes corre{to{transform:translateX(-50%)}}
+
+  /* SECCIONES */
+  main section.wrap{margin-top:112px}
+  .cabecera{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:32px}
+  .cabecera h2{font-size:clamp(40px,5vw,64px)}
+  .cabecera p{max-width:380px;font-size:15px;color:var(--suave)}
+
+  /* MARCAS */
+  .marcas{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+  .marca{height:96px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--linea);border-bottom:1px solid var(--linea);font-weight:700;color:rgba(32,30,32,.38);font-size:15px;letter-spacing:.04em}
+  .marca:nth-child(4n){border-right:0}
+  .marca:nth-last-child(-n+4){border-bottom:0}
+  .marca::before{content:"";width:18px;height:18px;border-radius:5px;background:currentColor;margin-right:10px;display:inline-block;vertical-align:-3px}
+
+  /* SOBRE MI */
+  .sobre{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .sobre h2{font-size:clamp(40px,4.8vw,62px)}
+  .sobre h2 .mano{color:var(--violeta)}
+  .sobre__foto{margin-top:32px;border-radius:200px 200px 18px 18px;overflow:hidden;aspect-ratio:4/4.4;position:relative;background:var(--naranja)}
+  .sobre__foto img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .sobre__lead{font-size:24px;line-height:1.35;font-weight:600;margin-bottom:22px}
+  .sobre__lead mark{background:linear-gradient(transparent 58%,var(--lima) 58%);color:inherit;padding:0 2px}
+  .sobre__txt p{color:var(--suave);font-size:16px;margin-bottom:16px}
+  .sobre__txt .sobre__lead{font-size:24px;color:var(--negro)}
+  @media (max-width:640px){.sobre__txt .sobre__lead{font-size:20px}}
+  .firma{font-family:var(--f-mano);font-size:40px;color:var(--naranja);margin-top:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{border:1px solid var(--negro);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+
+  /* PORTFOLIO */
+  .proyecto{margin-bottom:44px}
+  .proyecto__img{border-radius:18px;overflow:hidden;aspect-ratio:16/8.2;position:relative}
+  .proyecto__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .proyecto:hover .proyecto__img img{transform:scale(1.03)}
+  .proyecto__tag{position:absolute;top:18px;left:18px;font-family:var(--f-mano);font-size:22px;padding:4px 14px;border-radius:999px;color:var(--negro)}
+  .proyecto__pie{display:grid;grid-template-columns:1fr auto auto auto;gap:22px;align-items:center;padding-top:16px}
+  .proyecto__pie h3{font-family:var(--f-titulo);font-weight:400;text-transform:uppercase;font-size:28px}
+  .proyecto__pie span{font-size:14px;color:var(--suave)}
+  .proyecto__pie .badge,.badge{background:var(--negro);color:var(--crema);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .duo .proyecto__img{aspect-ratio:4/4.6}
+  .duo .proyecto__pie{grid-template-columns:1fr auto}
+
+  /* CONTACTO */
+  .contacto{background:var(--negro);color:var(--crema);margin-top:96px;padding:96px 0 40px;border-radius:32px 32px 0 0}
+  .contacto__top{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end}
+  .contacto h2{font-size:clamp(64px,10vw,150px)}
+  .contacto h2 .mano{color:var(--lima);font-size:.5em;display:block;line-height:1}
+  .contacto__datos a{display:flex;justify-content:space-between;border-bottom:1px solid rgba(244,241,236,.2);padding:16px 0;font-size:18px;font-weight:600}
+  .contacto__datos a:hover{color:var(--lima)}
+  .contacto .contacto__datos a.pill{display:inline-flex;justify-content:flex-start;border:0;padding:10px 12px 10px 20px;font-size:13px;background:var(--lima);color:var(--negro);margin-top:28px}
+  .contacto .pill__dot{background:var(--negro);color:var(--lima)}
+  .pie{display:flex;justify-content:space-between;align-items:center;margin-top:88px;padding-top:24px;border-top:1px solid rgba(244,241,236,.2);font-size:13px;color:rgba(244,241,236,.6)}
+  .pie img{height:54px;filter:invert(1) brightness(1.1)}
+  .dev{font-size:12px;letter-spacing:.04em;color:rgba(244,241,236,.6);transition:color .2s}
+  /* Firma del desarrollador: versión etiqueta de su manual (Instrument Sans 600, mayúsculas, +6% tracking) para fondo oscuro */
+  .dev b{font-family:'Instrument Sans',system-ui,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--crema);margin-left:4px}
+  .dev:hover,.dev:hover b{color:var(--lima)}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .nav__links{display:none}
+    .hero{grid-template-columns:1fr 1fr}
+    .hero__foto{min-height:460px}
+    .stats{grid-column:1/-1;flex-direction:row;justify-content:space-between;text-align:left}
+    .servicios{grid-template-columns:1fr 1fr}
+    .serv:nth-child(3){border-left:0;padding-left:0}
+    .serv:nth-child(n+3){border-top:1px solid var(--linea)}
+    .sobre,.contacto__top{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
+    .nav__logo img{height:38px}
+    .hero{grid-template-columns:1fr;gap:28px;padding-top:8px}
+    .hero__foto{min-height:440px;order:-1}
+    .sello{width:104px;left:auto;right:-6px;bottom:20px}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .servicios{grid-template-columns:1fr}
+    .serv{border-left:0!important;padding:20px 0!important;border-top:1px solid var(--linea)}
+    .serv:first-child{border-top:0}
+    .cabecera{flex-direction:column;align-items:start;gap:12px}
+    .marcas{grid-template-columns:1fr 1fr}
+    .marca{height:76px;font-size:13px}
+    .marca:nth-child(4n){border-right:1px solid var(--linea)}
+    .marca:nth-child(2n){border-right:0}
+    .marca:nth-last-child(-n+4){border-bottom:1px solid var(--linea)}
+    .marca:nth-last-child(-n+2){border-bottom:0}
+    .duo{grid-template-columns:1fr}
+    .proyecto__img{aspect-ratio:4/3.6}
+    .proyecto__pie{grid-template-columns:1fr auto;gap:8px 16px}
+    .proyecto__pie span:not(.badge){grid-column:1/-1;order:3}
+    .cinta__in{font-size:22px}
+    main section.wrap{margin-top:80px}
+    .pie{flex-direction:column;gap:16px;text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){.sello,.cinta__in{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="wrap nav">
+  <a class="nav__logo" href="#"><img src="img/logo-soy-salome.png" alt="Soy Salomé"></a>
+  <nav class="nav__links">
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#portfolio">Portfolio</a>
+  </nav>
+  <a class="pill" href="#contacto">Hablemos <span class="pill__dot">→</span></a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div>
+      <p class="hero__hola">¡Hola! Soy Salomé,</p>
+      <h1 class="titulo">Community<br>Manager<span class="mano">&amp; creadora de contenido</span></h1>
+      <p class="hero__txt">Convierto marcas en comunidades: estrategia, contenido y conversación para que tu audiencia no solo te vea, sino que te elija.</p>
+      <a class="pill" href="#contacto">Trabajemos juntas <span class="pill__dot">→</span></a>
+    </div>
+    <div class="hero__foto">
+      <div class="arco"><img src="img/salome-0101.jpg" alt="Salomé Vaca señalando hacia arriba con una sonrisa"></div>
+      <div class="sello"><img src="img/logo-circulo.png" alt="Soy Salomé · Community Manager"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>5+</b><span>Años de experiencia</span></div>
+      <div class="stat"><b>40+</b><span>Marcas gestionadas</span></div>
+      <div class="stat"><b>1.2M</b><span>Alcance mensual</span></div>
+      <div class="stat"><b>+300%</b><span>Crecimiento promedio</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div class="wrap" id="servicios">
+    <div class="servicios">
+      <div class="serv"><i style="background:var(--lima)"></i><h3>Gestión de redes</h3><p>Planificación, publicación y comunidad en Instagram, TikTok y Facebook.</p></div>
+      <div class="serv"><i style="background:var(--naranja)"></i><h3>Estrategia de contenido</h3><p>Pilares, tono de voz y calendario pensados para tus objetivos.</p></div>
+      <div class="serv"><i style="background:var(--violeta)"></i><h3>Creación de contenido</h3><p>Reels, fotos y stories que se sienten auténticos y venden.</p></div>
+      <div class="serv"><i style="background:var(--negro)"></i><h3>Métricas &amp; reportes</h3><p>Datos claros cada mes para saber qué funciona y por qué.</p></div>
+    </div>
+  </div>
+
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta__in">
+      <span>Contenido con intención</span><span>soy Salomé</span><span><em>✺</em></span><span>Comunidad</span><span>estrategia</span><span>Reels</span><span><em>✺</em></span><span>Storytelling</span>
+      <span>Contenido con intención</span><span>soy Salomé</span><span><em>✺</em></span><span>Comunidad</span><span>estrategia</span><span>Reels</span><span><em>✺</em></span><span>Storytelling</span>
+    </div>
+  </div>
+
+  <!-- MARCAS -->
+  <section class="wrap">
+    <div class="cabecera">
+      <h2 class="titulo">Marcas que <span class="mano" style="color:var(--naranja)">confían</span></h2>
+      <p>Algunas de las marcas con las que he crecido en redes. (Aquí van los logos reales de sus clientes.)</p>
+    </div>
+    <div class="marcas">
+      <div class="marca">Cliente 01</div><div class="marca">Cliente 02</div><div class="marca">Cliente 03</div><div class="marca">Cliente 04</div>
+      <div class="marca">Cliente 05</div><div class="marca">Cliente 06</div><div class="marca">Cliente 07</div><div class="marca">Cliente 08</div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="wrap sobre" id="sobre-mi">
+    <div>
+      <h2 class="titulo">Marcas con voz,<br>comunidades que <span class="mano">conectan</span></h2>
+      <div class="sobre__foto"><img src="img/salome-0039.jpg" alt="Salomé Vaca riendo con blazer verde"></div>
+    </div>
+    <div class="sobre__txt">
+      <p class="sobre__lead">Soy Salomé Vaca, community manager y creadora de contenido. Me encanta <mark>contar historias que la gente quiere compartir</mark>.</p>
+      <p>Texto de ejemplo: acompaño a marcas y emprendedoras a construir una presencia en redes que se parezca a ellas. Combino estrategia y creatividad para que cada publicación tenga un propósito, desde la idea hasta el análisis de resultados.</p>
+      <p>Creo en el contenido cercano, en responder cada mensaje y en medir para mejorar. Si buscas a alguien que cuide tu marca como si fuera suya, hablemos.</p>
+      <div class="chips"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Meta Ads</span><span class="chip">Canva</span><span class="chip">CapCut</span><span class="chip">Copywriting</span></div>
+      <div class="firma">— Salo</div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="wrap" id="portfolio">
+    <div class="cabecera">
+      <h2 class="titulo">Portfolio</h2>
+      <p>Proyectos recientes de estrategia y contenido. Cada caso muestra el reto, lo que hicimos y los resultados.</p>
+    </div>
+
+    <article class="proyecto">
+      <div class="proyecto__img"><img src="img/salome-0079.jpg" alt="Salomé editando contenido en su computadora" style="object-position:50% 40%"><span class="proyecto__tag" style="background:var(--lima)">caso destacado</span></div>
+      <div class="proyecto__pie"><h3>Proyecto uno</h3><span>Estrategia anual de redes para marca de moda</span><span>2025</span><span class="badge">Estrategia</span></div>
+    </article>
+
+    <div class="duo">
+      <article class="proyecto">
+        <div class="proyecto__img"><img src="img/salome-0119.jpg" alt="Salomé grabando contenido con su celular" style="object-position:50% 35%"><span class="proyecto__tag" style="background:var(--naranja)">reels</span></div>
+        <div class="proyecto__pie"><h3>Proyecto dos</h3><span class="badge">Contenido</span></div>
+      </article>
+      <article class="proyecto">
+        <div class="proyecto__img"><img src="img/salome-0093.jpg" alt="Salomé mostrando un celular a la cámara" style="object-position:50% 40%"><span class="proyecto__tag" style="background:var(--violeta);color:var(--crema)">lanzamiento</span></div>
+        <div class="proyecto__pie"><h3>Proyecto tres</h3><span class="badge">Campaña</span></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- CONTACTO -->
+<footer class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="contacto__top">
+      <h2 class="titulo"><span class="mano">¿tienes una marca?</span>Hablemos</h2>
+      <div class="contacto__datos">
+        <a href="mailto:hola@soysalome.com">hola@soysalome.com <span>↗</span></a>
+        <a href="#">Instagram · @soysalome <span>↗</span></a>
+        <a href="#">TikTok · @soysalome <span>↗</span></a>
+        <a href="#">WhatsApp <span>↗</span></a>
+        <a class="pill" href="mailto:hola@soysalome.com">Agenda una llamada <span class="pill__dot">→</span></a>
+      </div>
+    </div>
+    <div class="pie">
+      <img src="img/logo-soy-salome.png" alt="Soy Salomé">
+      <span>© 2026 Salomé Vaca · Community Manager</span>
+      <a class="dev" href="https://instagram.com/mateodeveloper" target="_blank" rel="noopener" aria-label="Diseño y desarrollo por @mateodeveloper en Instagram">Diseño y desarrollo por <b>@mateodeveloper</b></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
