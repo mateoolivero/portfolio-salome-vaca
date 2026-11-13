@@ -7,7 +7,7 @@
 <meta name="description" content="Salomé Vaca, community manager y creadora de contenido. Estrategia, contenido y comunidad para marcas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Quicksand:wght@400;500;600;700&family=Instrument+Sans:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Quicksand:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
   /* Colores del manual de marca */
   :root{
@@ -126,10 +126,15 @@
   .contacto .pill__dot{background:var(--negro);color:var(--lima)}
   .pie{display:flex;justify-content:space-between;align-items:center;margin-top:88px;padding-top:24px;border-top:1px solid rgba(244,241,236,.2);font-size:13px;color:rgba(244,241,236,.6)}
   .pie img{height:54px;filter:invert(1) brightness(1.1)}
-  .dev{font-size:12px;letter-spacing:.04em;color:rgba(244,241,236,.6);transition:color .2s}
-  /* Firma del desarrollador: versión etiqueta de su manual (Instrument Sans 600, mayúsculas, +6% tracking) para fondo oscuro */
-  .dev b{font-family:'Instrument Sans',system-ui,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--crema);margin-left:4px}
-  .dev:hover,.dev:hover b{color:var(--lima)}
+  /* Firma del desarrollador (manual @mateodeveloper): Instrument Serif itálica, minúscula,
+     "@mateo" en tinta y "developer" en cobalto, sobre fondo claro, abajo a la derecha.
+     Sin sombras, contornos ni otros colores. */
+  .creditos{background:var(--crema)}
+  .creditos__in{display:flex;justify-content:flex-end;align-items:baseline;gap:12px;padding-top:18px;padding-bottom:18px}
+  .creditos__in>span{font-size:12px;color:var(--suave)}
+  .firma-dev{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:22px;line-height:1;color:#141413;text-transform:none;letter-spacing:0;padding:4px 0}
+  .firma-dev span{color:#1F3FE9}
+  .firma-dev:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 
   /* RESPONSIVE */
   @media (max-width:980px){
@@ -166,6 +171,7 @@
     .cinta__in{font-size:22px}
     main section.wrap{margin-top:80px}
     .pie{flex-direction:column;gap:16px;text-align:center}
+    .creditos__in{justify-content:center}
   }
   @media (prefers-reduced-motion:reduce){.sello,.cinta__in{animation:none}}
 </style>
@@ -288,10 +294,17 @@
     <div class="pie">
       <img src="img/logo-soy-salome.png" alt="Soy Salomé">
       <span>© 2026 Salomé Vaca · Community Manager</span>
-      <a class="dev" href="https://instagram.com/mateodeveloper" target="_blank" rel="noopener" aria-label="Diseño y desarrollo por @mateodeveloper en Instagram">Diseño y desarrollo por <b>@mateodeveloper</b></a>
     </div>
   </div>
 </footer>
+
+<!-- Créditos: firma principal de @mateodeveloper sobre fondo claro, abajo a la derecha (según su manual) -->
+<div class="creditos">
+  <div class="wrap creditos__in">
+    <span>Diseño y desarrollo</span>
+    <a class="firma-dev" href="https://instagram.com/mateodeveloper" target="_blank" rel="noopener" aria-label="@mateodeveloper en Instagram">@mateo<span>developer</span></a>
+  </div>
+</div>
 
 </body>
 </html>
